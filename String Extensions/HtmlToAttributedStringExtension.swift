@@ -1,6 +1,6 @@
 //
 //  HtmlToAttributedStringExtension.swift
-//  Escapani
+//  - Project name -
 //
 //  Created by Anastasia Mousa on 8/2/23.
 //
