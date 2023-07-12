@@ -11,7 +11,7 @@ Here are some of the available extensions in this repository:
 - `UITextField`:      Adding an error icon, adding attributed text.
 - `UITextInput`:      Working with a selected range of a text input.
 - `UITextView`:       Adding attributed text.
-- `UIView`:           Adding round corners with & without parameter, setting it enabled.
+- `UIView`:           Adding round corners with & without parameter, making it userEnabled.
 - `UIViewController`: Creating a new viewController & adding its identifier.
 
 <!-- 
