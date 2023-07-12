@@ -7,6 +7,7 @@ This repo serves as a collection of useful Swift extensions that can be utilized
 Here are some of the available extensions in this repository:
 
 - `String`: Manipulating and working with strings.
+- `UITextField`: Adding an error icon, adding attributed text.
 - `UITextInput`: Working with a selected range of a text input.
 - `UIViewController`: Creating a new viewController & adding its identifier.
 
