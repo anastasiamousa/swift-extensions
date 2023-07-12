@@ -1,11 +1,3 @@
-//
-//  GetAttributedStringFromHTMLExtension.swift
-//  -- Project name -- 
-//
-//  Created by Anastasia Mousa on 21/2/23.
-//
-
-
 import Foundation
 
 extension String {

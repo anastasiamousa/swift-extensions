@@ -1,10 +1,3 @@
-//
-//  UIViewControllerExtension.swift
-//  - Project name - 
-//
-//  Created by Anastasia Mousa on 24/1/23.
-//
-
 import UIKit
 
 extension UIViewController {
