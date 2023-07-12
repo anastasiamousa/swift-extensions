@@ -1,0 +1,22 @@
+import UIKit
+
+extension UIView {
+
+    // round corners
+    func roundCorners() {
+        layer.cornerRadius  = bounds.size.height / 2
+        layer.masksToBounds = true
+    }
+
+    // round corners with parameter
+    func roundCorners(radius: CGFloat) {
+        layer.cornerRadius  = radius
+        layer.masksToBounds = true
+    }
+
+    // set enabled
+    func setEnabled(_ enable: Bool) {
+        isUserInteractionEnabled = enable
+        alpha = enable ? 1.0 : 0.5
+    }
+}
