@@ -1,7 +1,8 @@
 import UIKit
 
 extension UILabel {
-    
+
+    //with attributted text
     func withAttributedText(attributedProperties: [AttributedProperty], alignment: NSTextAlignment = .center, lineHeight: CGFloat = 0, lineSpacing: CGFloat = 0, underlineStyle: NSUnderlineStyle? = nil, lineBreakMode: NSLineBreakMode = .byWordWrapping) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
@@ -32,6 +33,12 @@ extension UILabel {
         }
 
         self.attributedText = combinedAttributedText
+    }
+
+    //set font
+    func setFont(font: Font, color: Color.Text) {
+        self.font = font.font
+        self.textColor = color.color
     }
     
 }
