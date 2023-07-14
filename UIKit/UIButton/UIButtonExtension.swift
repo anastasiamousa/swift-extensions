@@ -83,4 +83,10 @@ enum ButtonStyleEnum {
 
         self.setAttributedTitle(combinedAttributedText, for: state)
     }
+    
+    func isClickable(_ valid: Bool) {
+        self.isEnabled = valid
+        self.alpha = valid ? 1 : 0.5
+    } 
+        
 }
