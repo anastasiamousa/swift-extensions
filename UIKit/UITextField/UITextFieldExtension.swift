@@ -46,5 +46,10 @@ extension UITextField {
 
         self.attributedText = combinedAttributedText
     }
+
+    func setCursor(position: Int) {
+        let position = self.position(from: beginningOfDocument, offset: position)!
+        selectedTextRange = textRange(from: position, to: position)
+    }
     
 }
