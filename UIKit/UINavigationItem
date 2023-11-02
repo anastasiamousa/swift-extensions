@@ -1,0 +1,83 @@
+import UIKit
+
+extension UINavigationItem {
+    
+    // MARK: - Back Item
+ 
+    func setBackItem(backColor: UIColor = UIColor.App.mainColor) {
+        UINavigationBar.appearance().tintColor = backColor
+        self.backBarButtonItem = BackBarButtonItem()
+        self.backButtonTitle = ""
+        self.backBarButtonItem?.tintColor = backColor
+    }
+    
+    // MARK: - Title
+    
+    func setTitleView(text: String, textColor: UIColor = UIColor.App.mainColor) {
+        let titleLabel = EdgeInsetLabel(frame: CGRect(x: 0, y: 2, width: UIScreen.main.bounds.width/2, height: 43))
+        titleLabel.textInsets = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
+        titleLabel.textAlignment = .center
+        titleLabel.text = text
+        titleLabel.font = UIFont.getMainFont(fontTypeEnum: .regular, size: 16)
+        titleLabel.textColor = textColor
+        titleLabel.numberOfLines = 0
+        titleLabel.sizeToFit()
+        titleLabel.adjustsFontSizeToFitWidth = true
+        self.titleView = titleLabel
+    }
+    
+    //MARK: - Left Bar Button Item
+
+    func addLeftBarButtonItem(title: String){
+        let titleLabel = UILabel()
+        
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.withAttributedText(attributedProperties: [AttributedProperty(text: title, textColor: UIColor.black, font: UIFont.getMainFont(fontTypeEnum: .bold, size: 16))])
+        titleLabel.textAlignment = .left
+        
+        self.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+    }
+
+    //MARK: - Close Button
+
+    func addCloseButton(action: Selector, target: UIViewController) {
+        let customView = UIView()
+        let button = self.makeCustomButton(image: UIImage(named: "login-close")!,
+                                           highlightedImage: UIImage(named: "login-close")!,
+                                           rect: CGRect(x: 0, y: 0, width: 27, height: 27),
+                                           action: action,
+                                           target: target)
+        customView.frame = button.frame
+        customView.addSubview(button)
+        let barButton = UIBarButtonItem(customView: customView)
+        self.rightBarButtonItems = [barButton]
+    }
+
+    //MARK: - Back Button
+  
+    func addBackButton(action: Selector, target: UIViewController) {
+        let customView = UIView()
+        let button = self.makeCustomButton(image: UIImage(named: "arrow_left")!,
+                                           highlightedImage: UIImage(named: "arrow_left")!,
+                                           rect: CGRect(x: 0, y: 0, width: 27, height: 27),
+                                           action: action,
+                                           target: target)
+        customView.frame = button.frame
+        customView.addSubview(button)
+        let barButton = UIBarButtonItem(customView: customView)
+        self.leftBarButtonItems = [barButton]
+    }
+
+    //MARK: - Custom Button
+
+    func makeCustomButton(image: UIImage, highlightedImage: UIImage, rect: CGRect, action: Selector, target: UIViewController) -> UIButton {
+        let customButton = UIButton()
+        customButton.frame = rect
+        customButton.contentMode = .scaleAspectFit
+        customButton.setImage(image, for: .normal)
+        customButton.setImage(highlightedImage, for: .highlighted)
+        customButton.addTarget(target, action: action, for: .touchUpInside)
+        return customButton
+    }
+}
